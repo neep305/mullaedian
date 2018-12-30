@@ -1,0 +1,9 @@
+{% if place_list %}
+    <ul>
+        {% for p in place_list %}
+            <li><a href="/places/1">{{p.restaurant}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No places are available.</p>
+{% endif %}
