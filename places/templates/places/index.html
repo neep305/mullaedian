@@ -1,9 +1,26 @@
-{% if place_list %}
-    <ul>
-        {% for p in place_list %}
-            <li><a href="/places/1">{{p.restaurant}}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No places are available.</p>
-{% endif %}
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-4.2.1-dist/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MULLAEDIAN</a>
+    </nav>
+    <div class="container">
+        <h1>This is text in container div.</h1>
+    </div>
+    <h1>This is main page</h1>
+    {% if place_list %}
+        <ul>
+            {% for p in place_list %}
+                <li><a href="/places/1">{{p.restaurant}}</a></li>
+            {% endfor %}
+        </ul>
+        <img src="{% static 'images/main_header.jpg' %}">
+    {% else %}
+        <p>No places are available.</p>
+    {% endif %}
+
+    <script src="{% static 'bootstrap-4.2.1-dist/js/bootstrap.min.js' %}"
+</body>
