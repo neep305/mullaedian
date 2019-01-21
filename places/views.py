@@ -10,7 +10,7 @@ def index(request):
     place_list = Place.objects.order_by('-reg_date')[:]
     output = ', '.join([p.restaurant for p in place_list])
 
-    template = loader.get_template('places/index.html')
+    # template = loader.get_template('places/index.html')
     context = {
         'place_list': place_list,
     }
