@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'places.apps.PlacesConfig',
     'user_auth.apps.UserAuthConfig',
-    'social_django',
+    # 'social_django',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'mullaedian.urls'
@@ -66,8 +65,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -137,10 +134,9 @@ AUTHENTICATION_BACKENDS = (
  'social_core.backends.google.GoogleOpenId',  # for Google authentication
  'social_core.backends.google.GoogleOAuth2',  # for Google authentication
  'social_core.backends.github.GithubOAuth2',  # for Github authentication
- 'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
- 
+ 'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication  
  'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_FACEBOOK_KEY ='1249046281913304'  #Paste CLient Key
-SOCIAL_AUTH_FACEBOOK_SECRET = '81b499aa7457a9b916f4ac9696f6fd9e' #Paste Secret Key
+# SOCIAL_AUTH_FACEBOOK_KEY ='1249046281913304'  #Paste CLient Key
+# SOCIAL_AUTH_FACEBOOK_SECRET = '81b499aa7457a9b916f4ac9696f6fd9e' #Paste Secret Key
