@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import HttpResponse, Http404
-from django.template import loader
 
 from .models import Place
+
 
 # Create your views here.
 def index(request):
@@ -18,10 +18,8 @@ def index(request):
     # return HttpResponse(template.render(context, request))
     return render(request, 'places/index.html', context)
 
+
 def detail(request, shop_id):
-    try:
-        place_info = Place.object.get(pk=shop_id)
-    except:
-        raise Http404("Place info doesn't exist")
-    # return HttpResponse('Shop Id is %s.' % shop_id)
+    place_info = get_object_or_404(Place, pk=shop_id)
+
     return render(request, 'places/index.html', {'place_info': place_info})

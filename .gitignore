@@ -6,7 +6,13 @@ __pycache__
 
 # api key
 mullaedian-e60d694f9fa5.json
+example/portal*
 
 # dat
 *.dat
 
+.idea/
+
+.vscode/
+
+places/migrations/

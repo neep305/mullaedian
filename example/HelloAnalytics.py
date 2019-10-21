@@ -6,7 +6,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 KEY_FILE_LOCATION = '/Users/jason/dev/mullaedian/example/portal-242608-95b5b977509c.json'
-VIEW_ID = '177305315'
+VIEW_ID = '184465234'
 
 
 def initialize_analyticsreporting():
@@ -37,9 +37,8 @@ def get_report(analytics):
         'reportRequests': [
         {
           'viewId': VIEW_ID,
-          'dateRanges': [{'startDate': '7daysAgo', 'endDate': 'today'}],
-          'metrics': [{'expression': 'ga:sessions'}],
-          'dimensions': [{'name': 'ga:country'}]
+          'dateRanges': [{'startDate': '30daysAgo', 'endDate': 'today'}],
+          'metrics': [{'expression': 'ga:users'}]
         }]
       }
   ).execute()
