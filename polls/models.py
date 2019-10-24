@@ -1,11 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+This module is ORM module of polls app.
+"""
 import datetime
 
 from django.db import models
 from django.utils import timezone
 
 
-# Create your models here.
 class Question(models.Model):
+    """
+    About: question_text, pub_date
+    """
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published by Jason')
 
@@ -15,7 +21,9 @@ class Question(models.Model):
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
-
+    was_published_recently.admin_order_field = 'pub_date'
+    was_published_recently.boolean = True
+    was_published_recently.short_description = 'Published recently?'
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
